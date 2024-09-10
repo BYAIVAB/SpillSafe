@@ -1,28 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Ship, Map } from 'lucide-react';
 
 const AISDataMonitoring = () => {
   const navigate = useNavigate();
-  const [isSearchVisible, setSearchVisible] = useState(false);
-  const [shipId, setShipId] = useState('');
 
   const handleViewMapClick = () => {
     navigate("/map");
-  };
-
-  const handleSearchClick = () => {
-    setSearchVisible(!isSearchVisible);
-  };
-
-  const handleInputChange = (e) => {
-    setShipId(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log('Searching for Ship ID:', shipId);
-    //  search logic here
   };
 
   return (
@@ -44,43 +28,22 @@ const AISDataMonitoring = () => {
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-2">AIS Data Monitoring</h1>
-        <p className="text-xl text-gray-600 text-center mb-8">Monitor and detect oil spills using real-time AIS data.</p>
+        <p className=" text-2xl text-gray-600 text-center mb-8 ">Monitor and detect oil spills using real-time AIS data.</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4">Ship Identification No.</h2>
-            <div className="flex flex-col items-center">
-              <Ship size={64} className="text-gray-600 mb-4" />
-              <button
-                className="bg-black text-white px-4 py-2 rounded hover:bg-green-500 transition-colors"
-                onClick={handleSearchClick}
-              >
-                Search
-              </button>
-              {isSearchVisible && (
-                <form onSubmit={handleSearchSubmit} className="mt-4">
-                  <input
-                    type="text"
-                    value={shipId}
-                    onChange={handleInputChange}
-                    placeholder="Enter Ship ID"
-                    className="border border-gray-300 rounded px-4 py-2"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-black text-white px-4 py-2 rounded ml-2 hover:bg-green-500 transition-colors"
-                  >
-                    Submit
-                  </button>
-                </form>
-              )}
+        <div className="flex flex-col items-center space-y-6">
+          <div className="bg-white rounded-lg shadow-md p-4 w-full max-w-sm h-48">
+            <h2 className="text-xl font-semibold mb-2">Ship Information</h2>
+            <div className="flex flex-col items-center justify-center h-full">
+              <Ship size={48} className="text-gray-600 mb-2" />
+              <p className="text-lg font-bold text-gray-700">Ship Name: Aegean Angel</p>
+              <p className="text-lg font-bold text-gray-700">IMO: 9290323</p>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4">Mapbox</h2>
-            <div className="flex flex-col items-center">
-              <Map size={64} className="text-gray-600 mb-4" />
+          <div className="bg-white rounded-lg shadow-md p-4 w-full max-w-sm h-48">
+            <h2 className="text-xl font-semibold mb-2">Mapbox</h2>
+            <div className="flex flex-col items-center justify-center h-full">
+              <Map size={48} className="text-gray-600 mb-2" />
               <button
                 className="bg-black text-white px-4 py-2 rounded hover:bg-green-500 transition-colors"
                 onClick={handleViewMapClick}
