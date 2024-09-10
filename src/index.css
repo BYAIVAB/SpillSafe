@@ -1,0 +1,21 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+/* styles/globals.css */
+
+/* Light mode */
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  /* Dark mode */
+  .dark body {
+    background-color: hsl(var(--dark-background));
+    color: hsl(var(--dark-foreground));
+  }
+  
+  
