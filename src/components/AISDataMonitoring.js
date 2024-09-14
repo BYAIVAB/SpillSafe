@@ -73,7 +73,7 @@ const AISDataMonitoring = () => {
 
       <footer className="bg-black text-white py-3">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <p>&copy; 2024 SpillSafe. All rights reserved.</p>
+          <p>&copy; 2024 CleanWaves. All rights reserved.</p>
           <div>
             <a href="#" className="text-white hover:underline mr-4">Terms of Service</a>
             <a href="#" className="text-white hover:underline">Privacy</a>
